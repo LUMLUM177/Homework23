@@ -4,8 +4,9 @@ public class Flower {
     private String country;
     private double cost;
     public Integer lifeSpan;
+    public int count;
 
-    public Flower(String flowerName, String country, double cost, Integer lifeSpan) {
+    public Flower(String flowerName, String country, double cost, Integer lifeSpan, int count) {
         if (flowerName != null && flowerName.isEmpty()) {
             this.flowerName = "Белый";
         } else {
@@ -26,6 +27,11 @@ public class Flower {
         } else {
             this.lifeSpan = lifeSpan;
         }
+        if (count <= 0) {
+            this.count = 0;
+        } else {
+            this.count = count;
+        }
     }
 
     public String getFlowerName() {
@@ -38,6 +44,14 @@ public class Flower {
 
     public double getCost() {
         return this.cost;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public Integer getLifeSpan() {
+        return lifeSpan;
     }
 
     void setFlowerName(String flowerName) {
